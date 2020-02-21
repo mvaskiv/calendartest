@@ -15,7 +15,8 @@ $header-height: 25px;
 
 $block-shadow: 0px 2px 3px #0000000D;
 $sheet-shadow: 0px 2px 6px #0000000A;
-$event-shadow: 0px 3px 6px #00000063;
+$event-shadow: 0px 3px 6px rgba(0, 0, 0, 0.39);
+$dialog-shadow: 0px 3px 18px #00000029;
 
 @mixin transition($ts) {
     -webkit-transition: $ts;
@@ -245,7 +246,7 @@ $event-shadow: 0px 3px 6px #00000063;
     top: 79px;
     z-index: 1;
     background: #fff;
-    border-bottom: 1px solid #d2d2d2;
+    border-bottom: 1px solid $primary-cell-border-color;
     margin-bottom: -1px;
 }
 
@@ -348,6 +349,10 @@ $event-shadow: 0px 3px 6px #00000063;
     min-height: auto!important;
 }
 
+.rbc-timeslot-group {
+    border-color: $primary-cell-border-color;
+    height: 49px;
+}
 .rbc-time-content > .rbc-time-gutter .rbc-timeslot-group:last-child,
 .rbc-time-column.rbc-now .rbc-timeslot-group:nth-last-child(3),
 .rbc-time-content > .rbc-day-slot .rbc-timeslot-group:nth-last-child(2) {
@@ -429,8 +434,9 @@ $event-shadow: 0px 3px 6px #00000063;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     position: relative;
+    min-height: 23px;
     background-color: $primary-color;
-    border: none;
+    border: none!important;
     border-radius: $border-radius;
     padding: 5px;
     overflow: hidden;
@@ -446,22 +452,31 @@ $event-shadow: 0px 3px 6px #00000063;
 }
 
 .rbc-day-slot .rbc-event-content {
-    font-weight: bold;
-    letter-spacing: 0.5px;
     color: white;
 }
 
+.rbc-day-slot.rbc-time-column.rbc-now.rbc-today {
+    .rbc-event-content {
+        text-align: center;
+    }
+
+}
+
 .rbc-day-slot .rbc-event-label {
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    color: #ffffff;
-    font-size: 78%;
+    display: none;
 }
 
 /// Cell for all day slots
-.rbc-event-allday {
-    padding-top: 0;
-    padding-bottom: 0;
+.rbc-allday-cell {
+
+    .rbc-event-allday {
+        padding-top: 1px;
+        padding-bottom: 2px;
+        &.rbc-selected {
+            padding-top: 1px;
+            padding-bottom: 2px;
+        }
+    }
 }
 
 /// Day view header
@@ -489,7 +504,7 @@ $event-shadow: 0px 3px 6px #00000063;
     // source sans pro regular CHANGE
     width: inherit;
     font-size: 13px;
-    line-height: 20px;;
+    line-height: 20px;
     text-overflow: ellipsis;
     white-space: nowrap;
     color: #ffffff;
@@ -498,7 +513,7 @@ $event-shadow: 0px 3px 6px #00000063;
 .rbc-addons-dnd-resize-ew-anchor { display: none; }
 
 .rbc-event.rbc-selected {
-    border: 1px solid $primary-color;
+    border: 1px solid $primary-color!important;
     background: transparent;
     padding: 4px;
     @include shadow($event-shadow);
@@ -528,7 +543,67 @@ $event-shadow: 0px 3px 6px #00000063;
 }
 
 /* COLOR PICKER */
+// 
+// 
+// 
+// 
+// 
+// 
 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
 .color-picker {
     box-shadow: none !important;
     border: none !important;
@@ -540,6 +615,9 @@ $event-shadow: 0px 3px 6px #00000063;
             width: 100% !important;
         }
     }
+}
+.rbc-month-row {
+    min-height: 135px;
 }
 .rbc-month-row + .rbc-month-row {
     border-top: 1px solid $primary-cell-border-color;

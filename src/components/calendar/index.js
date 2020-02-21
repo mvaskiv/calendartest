@@ -16,7 +16,7 @@ const formats = {
 }
 const components = {
     timeGutterHeader: timeGutter,
-
+    // event: eventSlot,
 }
 class CalendarView extends React.Component {
   render() {
@@ -32,7 +32,7 @@ class CalendarView extends React.Component {
             endAccessor="end"
             defaultView="week"
             selectable
-            style={{ height: '55vw', width: '80vw' }} />
+            style={{ height: 'auto', width: '80vw', maxWidth: '1170px' }} />
       </div>
     );
   }
@@ -49,7 +49,7 @@ const demoEvent = [
     {
         title: 'Event name',
         start: moment().hour(13).minute(0).toDate(),
-        end: moment().hour(14).minute(0).toDate(),
+        end: moment().hour(13).minute(30).toDate(),
     }
 ]
 
